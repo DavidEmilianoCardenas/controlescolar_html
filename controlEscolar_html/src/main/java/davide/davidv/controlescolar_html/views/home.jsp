@@ -12,6 +12,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Control escolar</h1>
+        <<h2>Carrera</h2>
+        <ul>
+            <li><a href="crear.jsp">Crear Carrera</a></li>
+            <li><a href="listar.jsp">Listar Carreras</a></li>
+        </ul>
     </body>
 </html>
