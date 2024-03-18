@@ -20,6 +20,22 @@
         
         resultSet = getValues(conexion, "carreras");
         
+        System.out.println(resultSet);
+        
         closeConnection(conexion);
+         <TABLE BORDER=3>
+            <%
+                while(resultSet.next())
+                {
+            %>
+            <TR>
+                <TD>N&uacute;mero</TD>
+                <TD><%= resultSet.getString("nombre") %></TD>
+            </TR>
+            
+            <%
+                }
+            %>
+        </TABLE>
     </body>
 </html>
