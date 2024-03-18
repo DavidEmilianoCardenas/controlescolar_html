@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
  */
 public class ControlEscolar {
     
+    /*
     public static void main(String[] args) {
 
         Connection conexion = getConnection();
@@ -30,7 +31,7 @@ public class ControlEscolar {
 
         closeConnection(conexion);
     }
-    
+    */
     public static Connection getConnection()
     {
         try {
@@ -156,7 +157,7 @@ public class ControlEscolar {
     }
 
 
-    public static void getValues(Connection conn, String table_name)
+    public static java.sql.ResultSet getValues(Connection conn, String table_name)
     {
         try
         {
@@ -166,14 +167,12 @@ public class ControlEscolar {
             java.sql.ResultSet resultSet;
             resultSet = st.executeQuery(Query);
             
-            while(resultSet.next())
-            {
-                System.out.println("ID: " + resultSet.getString("id") + " | " +
-                    " Nombre: " + resultSet.getString("nombre"));
-            }
+            return resultSet;
         }catch (SQLException ex)
         {
             System.out.println("Error en la adquisición de datos");
+            
+            return null;
         }
     }
 
