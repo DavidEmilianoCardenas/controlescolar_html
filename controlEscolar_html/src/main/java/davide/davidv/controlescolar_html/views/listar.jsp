@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*" %>
+<%@page import="java.sql.*" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +15,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        Connection conexion = getConnection();
+        java.sql.ResultSet resultSet;
+        
+        resultSet = getValues(conexion, "carreras");
+        
+        closeConnection(conexion);
     </body>
 </html>
