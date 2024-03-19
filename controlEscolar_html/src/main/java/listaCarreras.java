@@ -16,6 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author mati
  */
+
 @WebServlet(urlPatterns = {"/listaCarreras"})
 public class listaCarreras extends HttpServlet {
 

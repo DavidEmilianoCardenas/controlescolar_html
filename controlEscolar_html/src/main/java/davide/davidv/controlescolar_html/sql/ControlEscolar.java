@@ -1,8 +1,10 @@
+package davide.davidv.controlescolar_html.sql;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +21,8 @@ import javax.swing.JOptionPane;
  *
  * @author mati
  */
+
+
 public class ControlEscolar {
     
     /*
@@ -32,32 +36,28 @@ public class ControlEscolar {
         closeConnection(conexion);
     }
     */
+    
     public static Connection getConnection()
     {
+        Connection conexion = null;
         try {
-            Properties props = new Properties();
-            props.load(new FileInputStream("config/db.properties"));
-            String username = props.getProperty("username");
-            String password = props.getProperty("password");
-            String bd_name = props.getProperty("bd");
 
-            String host = "jdbc:mysql://localhost/control_escolar";
-             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
+            String username = "root";
+            String password = "123456";
 
-                Connection conexion = DriverManager.getConnection(host, username, password);
+            String host = "jdbc:mysql://localhost:3306/control_escolar?autoReconnect=true&useSSL=false";
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
-                return conexion;
-            } catch (SQLException | ClassNotFoundException ex) {
-                System.out.println("Error en la conexion de la base de datos");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+            conexion = DriverManager.getConnection(host, username, password);
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            
         }
         
-        return null;
+        return conexion;        
     }
 
+    /*
     public static void menu (Connection con) {
         Scanner sc = new Scanner(System.in);
         boolean correctInput = false;
@@ -121,6 +121,7 @@ public class ControlEscolar {
                 System.out.println("Selecciona una de las opciones disponibles");
         }
     }
+    */ 
     
     public static void InsertData(String table_name, String name, Connection con)
     {
@@ -157,21 +158,19 @@ public class ControlEscolar {
     }
 
 
-    public static java.sql.ResultSet getValues(Connection conn, String table_name)
+    public static ResultSet getValues(Connection conn, String table_name)
     {
         try
         {
             Connection conexion = conn;
             String Query = "SELECT * FROM " + table_name;
             Statement st = conexion.createStatement();
-            java.sql.ResultSet resultSet;
+            ResultSet resultSet;
             resultSet = st.executeQuery(Query);
             
             return resultSet;
         }catch (SQLException ex)
         {
-            System.out.println("Error en la adquisición de datos");
-            
             return null;
         }
     }
@@ -202,7 +201,7 @@ public class ControlEscolar {
             String Query = "SELECT * FROM alumnos WHERE nombre LIKE \"%" + nombre + "%\"";
             
             Statement st = con.createStatement();
-            java.sql.ResultSet resultSet;
+            ResultSet resultSet;
             resultSet = st.executeQuery(Query);
             
             Map<Short, String> list = new HashMap<Short, String>();
