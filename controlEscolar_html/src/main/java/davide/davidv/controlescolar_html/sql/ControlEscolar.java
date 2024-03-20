@@ -185,7 +185,6 @@ public class ControlEscolar {
         }catch(SQLException ex)
         {
             System.out.println(ex.getMessage());
-            JOptionPane.showMessageDialog(null, "Error borrando el registro especificado");
         }
     }
     
@@ -254,7 +253,6 @@ public class ControlEscolar {
         }catch(SQLException ex)
         {
             System.out.println(ex.getMessage());
-            JOptionPane.showMessageDialog(null, "Error matriculando al alumno");
         }
     }
     
@@ -314,7 +312,6 @@ public class ControlEscolar {
         }catch(SQLException ex)
         {
             System.out.println(ex.getMessage());
-            JOptionPane.showMessageDialog(null, "Error matriculando al alumno");
         }   
     }
     
@@ -323,10 +320,9 @@ public class ControlEscolar {
         try
         {
             con.close();
-            JOptionPane.showMessageDialog(null, "Se ha finalizado la conexión con el servidor");
+           
         }catch (SQLException ex)
         {
-            JOptionPane.showMessageDialog(null, "No se ha podido finalizar la conexión con el servidor");
 
         }
     }
