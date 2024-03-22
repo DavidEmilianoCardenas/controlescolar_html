@@ -16,7 +16,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+        <h1>Lista de carreras</h1>
          <TABLE BORDER=3>
             <%
                 Connection conexion = ControlEscolar.getConnection();
