@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
 
 public class ControlEscolar {
     
-    /*
+    
     public static void main(String[] args) {
 
         Connection conexion = getConnection();
