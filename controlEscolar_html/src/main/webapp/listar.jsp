@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
 <%@page import="java.sql.*" %>
+<%@page import="davide.davidv.controlescolar_html.sql.ControlEscolar" %>
 
 <!DOCTYPE html>
 <html>
@@ -15,27 +16,39 @@
         <title>JSP Page</title>
     </head>
     <body>
-        Connection conexion = getConnection();
-        java.sql.ResultSet resultSet;
         
-        resultSet = getValues(conexion, "carreras");
-        
-        System.out.println(resultSet);
-        
-        closeConnection(conexion);
          <TABLE BORDER=3>
             <%
-                while(resultSet.next())
+                Connection conexion = ControlEscolar.getConnection();
+                ResultSet resultSet;
+                
+                if(conexion !=null)
                 {
+                    resultSet = ControlEscolar.getValues(conexion, "carreras");
+                    while(resultSet.next())
+                    {
             %>
             <TR>
-                <TD>N&uacute;mero</TD>
+                <TD>Carreras</TD>
                 <TD><%= resultSet.getString("nombre") %></TD>
             </TR>
             
             <%
+                    }
+
+                    ControlEscolar.closeConnection(conexion);
+                }
+                else
+                {   
+            %>
+             <TR>
+                <TD>Carreras</TD>
+                <TD>NOT FOUND</TD>
+            </TR>
+            <%
                 }
             %>
+            
         </TABLE>
     </body>
 </html>
