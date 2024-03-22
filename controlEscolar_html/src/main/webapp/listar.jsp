@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
 <%@page import="java.sql.*" %>
+<link href="CSS/styles.css" rel="stylesheet" type="text/css">
 <%@page import="davide.davidv.controlescolar_html.sql.ControlEscolar" %>
 
 <!DOCTYPE html>
@@ -17,7 +18,8 @@
     </head>
     <body>
         <h1>Lista de carreras</h1>
-         <TABLE BORDER=3>
+        <main>
+            <TABLE BORDER=3>
             <%
                 Connection conexion = ControlEscolar.getConnection();
                 ResultSet resultSet;
@@ -31,6 +33,12 @@
             <TR>
                 <TD>Carreras</TD>
                 <TD><%= resultSet.getString("nombre") %></TD>
+                <td>
+                    <a href="listaCarreras" target="_top">
+                        Borrar
+                        <% ControlEscolar.deleteCarrera("carreras", resultSet.getString("nombre"), conexion); %>
+                    </a>
+                    </td>
             </TR>
             
             <%
@@ -49,6 +57,7 @@
                 }
             %>
             
-        </TABLE>
+            </TABLE>
+        </main>
     </body>
 </html>

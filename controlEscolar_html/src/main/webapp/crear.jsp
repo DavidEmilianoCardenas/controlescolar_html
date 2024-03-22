@@ -13,6 +13,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-    </body>
+        <h1>Crear carrera</h1>
+        <main>
+            <form action="./serverltsaludo3" method="post">
+            <input type="text" name="carrera"/>
+            <input type="submit" title="Crear"/>
+            </form>
+        </main>
 </html>

@@ -1,0 +1,86 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 22 mar 2024, 10:07:18
+    Author     : mati
+*/
+
+*
+{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+.linkBox
+{
+    border-color: gray;
+    border-width: 1px;
+    border-style: solid;
+    background:linear-gradient(white, 70%,rgb(167, 222, 109));
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    text-align: center;
+    width:200px;
+
+}
+.linkBox:hover
+{
+    background:linear-gradient(white, 70%, rgb(198, 141, 141));
+}
+
+.actualPage
+{
+    border-color: gray;
+    border-width: 1px;
+    border-style: solid;
+    background:linear-gradient(white, 70%, rgb(198, 141, 141));
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+a
+{
+    text-decoration: none;
+    color:inherit;
+}
+ul
+{
+    margin:0px;
+}
+li
+{
+    padding-bottom: 30px;
+    margin-bottom: 5px;
+}
+
+h1
+{
+    text-align: center;
+}
+
+body
+{
+    border-color: rgb(230, 230, 230);
+    border-width: 10px;
+    border-style: solid;
+    margin-left: auto;
+    margin-right: auto;
+    width:900px;
+}
+table
+{
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    width: auto;
+    text-align: center;
+    background-color: rgb(234, 195, 124);
+    border-spacing: 5px;
+    margin-bottom: 25px;
+    width: 500px;
+}
+th, td
+{
+    height: 25px;
+    background-color: rgb(234, 252, 208);
+}
