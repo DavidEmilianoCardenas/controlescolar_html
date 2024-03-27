@@ -34,10 +34,7 @@
                 <TD>Carreras</TD>
                 <TD><%= resultSet.getString("nombre") %></TD>
                 <td>
-                    <a href="listaCarreras" target="_top">
                         Borrar
-                        <% ControlEscolar.deleteCarrera("carreras", resultSet.getString("nombre"), conexion); %>
-                    </a>
                     </td>
             </TR>
             

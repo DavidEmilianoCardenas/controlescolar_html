@@ -22,9 +22,8 @@
                 String name = request.getParameter("carrera");
                 ControlEscolar ce = new ControlEscolar();
                 Connection conexion = ce.getConnection();
-                ce.InsertData("carreras", name, conexion);
+                ce.InsertData("carreras", name);
                 
-                ce.closeConnection(conexion);
                 RequestDispatcher rd = request.getRequestDispatcher("./listar.jsp");
                 rd.forward(request, response);
             %>

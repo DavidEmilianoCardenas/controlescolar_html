@@ -123,34 +123,38 @@ public class ControlEscolar {
     }
     */ 
     
-    public static void InsertData(String table_name, String name, Connection con)
+    public static void InsertData(String table_name, String name)
     {
         try
         {
+            Connection con = getConnection();
             String Query = "INSERT INTO " + table_name + " (nombre) VALUES("
                     + "\"" + name +  "\")";
             
             Statement st = con.createStatement();
             System.out.println(Query);
             st.executeUpdate(Query);
+            closeConnection(con);
         }catch (SQLException ex)
         {
             System.out.println(ex);
         }
     }
 
-    public static void updateData (String table_name, int id,String newName, Connection con) {
+    public static void updateData (String table_name, String oldName,String newName) {
         try
         {
+            Connection con = getConnection();
             System.out.println("Entra al try");
             String Query = "UPDATE " + table_name +
                     " SET nombre = " +
                     "\'" + newName +  "\' " +
-                    "WHERE id = " + id ;
+                    "WHERE nombre = " + oldName ;
 
             Statement st = con.createStatement();
             System.out.println(Query);
             st.executeUpdate(Query);
+            closeConnection(con);
         }catch (SQLException ex)
         {
             System.out.println(ex);
@@ -175,13 +179,15 @@ public class ControlEscolar {
         }
     }
 
-    public static void deleteCarrera(String table_name, String nombre, Connection con)
+    public static void deleteCarrera(String table_name, String nombre)
     {
         try
         {
+            Connection con = getConnection();
             String Query = "DELETE FROM " + table_name + " WHERE nombre = \"" + nombre + "\"";
             Statement st = con.createStatement();
             st.executeUpdate(Query);
+            closeConnection(con);
         }catch(SQLException ex)
         {
             System.out.println(ex.getMessage());
