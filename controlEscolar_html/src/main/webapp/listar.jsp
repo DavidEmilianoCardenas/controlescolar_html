@@ -35,7 +35,7 @@
                 <TD><%= resultSet.getString("nombre") %></TD>
                 <td>
                         Borrar
-                    </td>
+                </td>
             </TR>
             
             <%
