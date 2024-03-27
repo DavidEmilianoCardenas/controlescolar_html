@@ -6,6 +6,9 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
+<%@page import="java.sql.*" %>
+<link href="CSS/styles.css" rel="stylesheet" type="text/css">
+<%@page import="davide.davidv.controlescolar_html.sql.ControlEscolar" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,9 +18,15 @@
     <body>
         <h1>Crear carrera</h1>
         <main>
-            <form action="./serverltsaludo3" method="post">
-            <input type="text" name="carrera"/>
-            <input type="submit" title="Crear"/>
-            </form>
+            <%
+                String name = request.getParameter("carrera");
+                ControlEscolar ce = new ControlEscolar();
+                Connection conexion = ce.getConnection();
+                ce.InsertData("carreras", name, conexion);
+                
+                ce.closeConnection(conexion);
+                RequestDispatcher rd = request.getRequestDispatcher("./listar.jsp");
+                rd.forward(request, response);
+            %>
         </main>
 </html>
