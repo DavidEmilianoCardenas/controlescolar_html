@@ -34,7 +34,17 @@
                 <TD>Carreras</TD>
                 <TD><%= resultSet.getString("nombre") %></TD>
                 <td>
-                        Borrar
+                    <form action="borrar.jsp" method="post">
+                        <input type="text" name="id" value="<%= resultSet.getString("id") %>">
+                        <input type="hidden" name="name" value="<%= resultSet.getString("nombre") %>">
+                        <input type="submit" value="Borrar">
+                    </form>
+                </td>
+                <td>
+                    <form action="modificarServlet" method="post">
+                        <input type="hidden" name="name" value="<%= resultSet.getString("nombre") %>">
+                        <input type="submit" value="Modificar">
+                    </form>
                 </td>
             </TR>
             

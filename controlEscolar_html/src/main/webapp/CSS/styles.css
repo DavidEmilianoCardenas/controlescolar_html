@@ -84,3 +84,16 @@ th, td
     height: 25px;
     background-color: rgb(234, 252, 208);
 }
+
+main
+{
+    margin: 20px;
+    margin-left: 180px;
+    border-color: gainsboro;
+    border-width: 1px;
+    border-style: solid;
+    padding-left: 15px;
+    padding-right: 15px;
+    background:linear-gradient(rgb(205, 205, 205), 2%, white, 98%, rgb(205, 205, 205));
+
+}

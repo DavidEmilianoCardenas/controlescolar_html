@@ -141,7 +141,7 @@ public class ControlEscolar {
         }
     }
 
-    public static void updateData (String table_name, String oldName,String newName) {
+    public static void updateData (String table_name, String id,String newName) {
         try
         {
             Connection con = getConnection();
@@ -149,7 +149,7 @@ public class ControlEscolar {
             String Query = "UPDATE " + table_name +
                     " SET nombre = " +
                     "\'" + newName +  "\' " +
-                    "WHERE nombre = " + oldName ;
+                    "WHERE id = " + id + "";
 
             Statement st = con.createStatement();
             System.out.println(Query);
