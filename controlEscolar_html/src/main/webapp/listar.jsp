@@ -35,15 +35,15 @@
                 <TD><%= resultSet.getString("nombre") %></TD>
                 <td>
                     <form action="borrar.jsp" method="post">
-                        <input type="hidden" name="name" value="<%= resultSet.getString("nombre") %>">
-                        <input type="hidden" name="ID" value="<%= resultSet.getString("id") %>">
-                        <input type="submit" value="Borrar">
+                        <input type="hidden" name="name" value="<%= resultSet.getString("nombre") %>"/>
+                        <input type="text" value="<%= resultSet.getString("id") %>" name="surname"/>
+                        <input type="submit" value="Borrar"/>
                     </form>
                 </td>
                 <td>
                     <form action="modificarServlet" method="post">
-                        <input type="hidden" name="name" value="<%= resultSet.getString("nombre") %>">
-                        <input type="submit" value="Modificar">
+                        <input type="hidden" name="name" value="<%= resultSet.getString("nombre") %>"/>
+                        <input type="submit" value="Modificar" class="button"/>
                     </form>
                 </td>
             </TR>

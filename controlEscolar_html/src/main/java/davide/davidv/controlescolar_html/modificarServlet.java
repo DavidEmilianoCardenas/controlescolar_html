@@ -11,6 +11,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.*;
+import java.sql.*;
+import davide.davidv.controlescolar_html.sql.ControlEscolar;
 
 /**
  *
@@ -41,10 +44,14 @@ public class modificarServlet extends HttpServlet {
             out.println("<body>");
             
             String name = request.getParameter("name");
-            String id = request.getParameter("ID");
-            out.println("<h1>Servlet modificarServlet at " + request.getContextPath() + "</h1>"); 
-            out.println("<form action='./modificar.jsp' method='post'>");
+            String id = request.getParameter("surname");
+            ControlEscolar ce = new ControlEscolar();
+            String id2 = ce.getID("carreras", name);
+            out.println("<h1>Servlet modificarServlet at " + request.getContextPath() + "</h1>");  
+            out.println("<h2>"+id+"</h2>");
+            out.println("<form action='./modificar.jsp' method='post'>"); 
             out.println("<input type='text' name='ID'/ placeholder='"+ id +"'>");
+            out.println("<input type='text' name='ID2'/ placeholder='"+ id2 +"'>");
             out.println("<input type='text' name='oldName'/ placeholder='"+ name+"'>");
             out.println("<input type='text' name='newName'/>");
             out.println("<input type='submit' title='Crear'/>");

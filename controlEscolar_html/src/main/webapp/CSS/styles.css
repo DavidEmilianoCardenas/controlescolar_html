@@ -97,3 +97,9 @@ main
     background:linear-gradient(rgb(205, 205, 205), 2%, white, 98%, rgb(205, 205, 205));
 
 }
+
+.button
+{
+    background:transparent;
+    display: inline;
+}

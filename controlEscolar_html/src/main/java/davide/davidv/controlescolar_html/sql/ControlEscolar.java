@@ -321,6 +321,26 @@ public class ControlEscolar {
         }   
     }
     
+    public static String getID(String table_name, String name)
+    {
+        try
+        {
+            Connection conexion = getConnection();
+            String Query = "SELECT id FROM " + table_name + " WHERE nombre LIKE \"" + name + "\"";
+            Statement st = conexion.createStatement();
+            ResultSet resultSet;
+            resultSet = st.executeQuery(Query);
+            
+            
+            String id = resultSet.getString("id");
+            closeConnection(conexion);
+            
+            return id;
+        }catch (SQLException ex)
+        {
+            return null;
+        }
+    }
     public static void closeConnection(Connection con)
     {
         try

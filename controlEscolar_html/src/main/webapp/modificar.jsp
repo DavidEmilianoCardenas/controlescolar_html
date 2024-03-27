@@ -20,7 +20,7 @@
         <main>
             
             <%
-                String id = request.getParameter("ID");
+                String id = request.getParameter("surname");
                 String newName = request.getParameter("newName");
                 ControlEscolar ce = new ControlEscolar();
                 ce.updateData("carreras",id, newName);
