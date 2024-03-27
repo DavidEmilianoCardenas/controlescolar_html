@@ -41,10 +41,10 @@ public class modificarServlet extends HttpServlet {
             out.println("<body>");
             
             String name = request.getParameter("name");
-            String id = request.getParameter("id");
+            String id = request.getParameter("ID");
             out.println("<h1>Servlet modificarServlet at " + request.getContextPath() + "</h1>"); 
             out.println("<form action='./modificar.jsp' method='post'>");
-            out.println("<input type='text' name='id'/ placeholder='"+ id+"'>");
+            out.println("<input type='text' name='ID'/ placeholder='"+ id +"'>");
             out.println("<input type='text' name='oldName'/ placeholder='"+ name+"'>");
             out.println("<input type='text' name='newName'/>");
             out.println("<input type='submit' title='Crear'/>");
