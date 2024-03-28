@@ -141,18 +141,15 @@ public class ControlEscolar {
         }
     }
 
-    public static void updateData (String table_name, String id,String newName) {
+    public static void updateData (String table_name, String id, String newName) {
         try
         {
             Connection con = getConnection();
-            System.out.println("Entra al try");
             String Query = "UPDATE " + table_name +
-                    " SET nombre = " +
-                    "\'" + newName +  "\' " +
-                    "WHERE id = " + id + "";
+                    " SET nombre = \"" + newName +  "\" "  
+                    + " WHERE id = " + Integer.parseInt(id);
 
             Statement st = con.createStatement();
-            System.out.println(Query);
             st.executeUpdate(Query);
             closeConnection(con);
         }catch (SQLException ex)
@@ -179,12 +176,12 @@ public class ControlEscolar {
         }
     }
 
-    public static void deleteCarrera(String table_name, String nombre)
+    public static void deleteCarrera(String table_name, String id)
     {
         try
         {
             Connection con = getConnection();
-            String Query = "DELETE FROM " + table_name + " WHERE nombre = \"" + nombre + "\"";
+            String Query = "DELETE FROM " + table_name + " WHERE id = " + Integer.parseInt(id);
             Statement st = con.createStatement();
             st.executeUpdate(Query);
             closeConnection(con);

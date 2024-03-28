@@ -17,9 +17,9 @@
     </head>
     <body>
             <%
-                String name = request.getParameter("name");
+                String id = request.getParameter("id");
                 ControlEscolar ce = new ControlEscolar();
-                ce.deleteCarrera("carreras", name);
+                ce.deleteCarrera("carreras", id);
                 
                 RequestDispatcher rd = request.getRequestDispatcher("./listar.jsp");
                 rd.forward(request, response);

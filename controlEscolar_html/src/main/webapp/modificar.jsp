@@ -18,9 +18,8 @@
     <body>
         <h1>modificar</h1>
         <main>
-            
             <%
-                String id = request.getParameter("surname");
+                String id = request.getParameter("ID");
                 String newName = request.getParameter("newName");
                 ControlEscolar ce = new ControlEscolar();
                 ce.updateData("carreras",id, newName);
