@@ -65,6 +65,10 @@
             %>
             
             </TABLE>
+            
+            <a href="index.html" target="_top" class="linkBox" style="margin-top: 50px;">
+                     Volver
+            </a>
         </main>
     </body>
 </html>

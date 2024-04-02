@@ -39,6 +39,7 @@ public class modificarServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<link rel=\"stylesheet\" href=\"./CSS/styles.css\">");
             out.println("<title>Servlet modificarServlet</title>");            
             out.println("</head>");
             out.println("<body>");
@@ -46,7 +47,6 @@ public class modificarServlet extends HttpServlet {
             String name = request.getParameter("name");
             String id = request.getParameter("id");
             
-            out.println("<h1>Servlet modificarServlet at " + request.getContextPath() + "</h1>");  
             out.println("<form action='./modificar.jsp' method='post'>"); 
             
             out.println("<input type='hidden' name='id'/ placeholder='"+ id +"'>");
