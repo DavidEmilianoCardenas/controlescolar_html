@@ -39,9 +39,9 @@ public class crearCarrera extends HttpServlet {
             out.println("<link rel=\"stylesheet\" href=\"./CSS/styles.css\">");
             out.println("<title>Servlet crearCarrera</title>");            
             out.println("</head>");
-            out.println("<body>");
-            out.println("<main style='height:300px;>");
-            out.println("<form action='./crear.jsp' method='post'>");
+            out.println("<body >");
+            out.println("<main style='height:300px;'>");
+            out.println("<form action='./crear.jsp' method='post' style='margin-bottom:40px;'>");
             out.println("<input type='text' name='carrera'/>");
             out.println("<input type='submit' title='Crear'/>");
             out.println("</form>");

@@ -19,7 +19,7 @@
     <body>
         <h1>Lista de carreras</h1>
         <main>
-            <TABLE BORDER=3>
+            <TABLE BORDER=3 style="margin-bottom:40px;">
             <%
                 Connection conexion = ControlEscolar.getConnection();
                 ResultSet resultSet;
